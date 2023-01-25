@@ -21,12 +21,18 @@ public class AddressBookSystem {
                 case 2:
                     addressBook.showContacts();
                     break;
+                case 3:
+                    addressBook.editContact();
+                    break;
+                case 4:
+                    addressBook.deleteContact();
+                    break;
                 default:
                     System.out.println(" !!!Invalid Input!!! ");
                     break;
 
             }
-        } while (Option != 3);
+        } while (Option != 4);
 
     }
 }

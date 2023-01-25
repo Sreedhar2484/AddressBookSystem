@@ -1,6 +1,6 @@
 package com.bridgelabz.addressBookSystems;
 
-public class Contact {
+public class ContactPerson {
     private String firstName, lastName, email, address, city, state;
     private int zip;
     private long mobile;

@@ -3,12 +3,10 @@ package com.bridgelabz.addressBookSystems;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook extends Contact {
+public class AddressBook extends ContactPerson {
     Scanner scanner = new Scanner(System.in);
-    ArrayList<Contact> contactsArrayList = new ArrayList<Contact>();
-
-    Contact contact = new Contact(); // create a ContactPerson object
-
+    ContactPerson contact = new ContactPerson();
+    ArrayList<ContactPerson> contactsArrayList = new ArrayList<ContactPerson>();
     // Add contacts
 
     public void addContact() {
@@ -41,7 +39,7 @@ public class AddressBook extends Contact {
 		System.out.println(contact.toString());
 
         for (int i = 0; i < contactsArrayList.size(); i++) {
-			Contact contacts = contactsArrayList.get(i);
+			ContactPerson contacts = contactsArrayList.get(i);
 			System.out.println(contacts.toString());
 		}
 	}
@@ -53,7 +51,7 @@ public class AddressBook extends Contact {
 		System.out.println("Enter the First Name to Edit : ");
 		String FirstName = (scanner.next());
 		boolean IsAvaible = false;
-        for (Contact contact : contactsArrayList) {
+        for (ContactPerson contact : contactsArrayList) {
 			if (contact.getFirstName().equals(FirstName)) {
 				IsAvaible = true;
 
@@ -81,6 +79,29 @@ public class AddressBook extends Contact {
 		if (IsAvaible == false) {
 			System.out.println("Contact Doesn't exist.");
 		}
-	
+
 	}
+    
+    /*
+     * Ability to delete a person using person's name
+     */
+    public void deleteContact() {
+        System.out.println("Enter the First Name to Delete: ");
+        String FirstName = (scanner.next());
+        boolean IsAvaible = false;
+
+        for (ContactPerson contact : contactsArrayList) {
+            if (contact.getFirstName().equalsIgnoreCase(FirstName)) {
+                IsAvaible = true;
+                contactsArrayList.remove(contact);
+                System.out.println("!Deleted The Contact!");
+                break;
+            }
+        }
+        if (IsAvaible == false) {
+            System.out.println("Doesn't exist.");
+        }
+
+    }
+
 }
