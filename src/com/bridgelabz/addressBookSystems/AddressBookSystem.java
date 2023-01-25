@@ -9,10 +9,10 @@ public class AddressBookSystem {
         Scanner scanner = new Scanner(System.in);
         int Option;
         do {
-            System.out.println(" 1. Add Contact \n 2. Display contact \n");
-            System.out.println("Enter the  Number: ");
-
-            Option = scanner.nextInt();
+            System.out.println(
+                    "1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Exit");
+            System.out.println("Enter Choice: ");
+            Option = addressBook.scanner.nextInt();
 
             switch (Option) {
                 case 1:
